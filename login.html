@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Login/Register</title>
+<link rel="stylesheet" href="login.css">
+<link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box"> 
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Sign In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+            </div>
+
+            <form id="login" class="input-group" method="get">
+                <input type="email" class="input-field" id="uname" name="Username" placeholder="Email" required >
+                <input type="password" class="input-field" id="pswd" name="Password" placeholder="Password" required >
+                <input type="checkbox" class="check-box"><span>Remember Me</span>
+                <button type="submit" class="submit-btn" onclick="check()">Login</button>
+            </form>
+            <form id="register" class="input-group" action="index.html" method="get">
+                <input type="text" class="input-field" name="Username" placeholder="Name" required>
+                <input type="email" class="input-field" name="Email" placeholder="Email Id" required>
+                <input type="password" class="input-field" name="Password" placeholder="Password" required>
+                <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn" onclick="done()">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function check(){
+            var UN=document.getElementById("uname").value;
+            var PW=document.getElementById("pswd").value;
+
+            if(UN=='SKB' && PW=='123456')
+            { 
+                
+                window.location.assign("index.html");
+                alert("Successfull!"); 
+            }
+            else
+            { 
+        
+                window.alert("Invalid Username or Password!");
+            } 
+        }
+        function done(){
+            window.alert("Successfully Registered");
+        }
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("btn");
+
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0px";
+        } 
+    </script>
+</body>
+</html>
